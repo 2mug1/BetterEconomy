@@ -15,6 +15,16 @@ public interface MainConfig {
         return "file";
     }
 
+    @ConfigPath(value = {"use-top-hologram"}, priority = 1)
+    default boolean isUseTopHologram() {
+        return true;
+    }
+
+    @ConfigPath(value = {"top-hologram-location"}, priority = 1)
+    default String getTopHologramLocation() {
+        return "world:0:0:0:0:0";
+    }
+
     @ConfigPath(value = {"currency", "singular"}, priority = 1)
     default String getCurrencySingular() {
         return "$";
